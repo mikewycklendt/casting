@@ -12,36 +12,34 @@ setup_db(app)
 @app.route('/movies')
 @requires_auth('get:movies')
 def movies(payload):
+  try:
+    movies = Movie.query.all()
+    movie_info = [movies.format() for movie in movies]
 
-    try:
-        movies = Movie.query.all()
-        movie_info = [movies.format() for movie in movies]
+    return jsonify({
+      'status_code': 200,
+      'success': True,
+      'movies': movie_info
+    })
 
-        return jsonify({
-            'status_code': 200,
-            'success': True,
-            'movies': movie_info
-        })
-
-    except:
-        abort(400)
+  except:
+    abort(400)
 
 @app.route('/actors')
 @requires_auth('get:actors')
 def actors(payload):
+  try:
+    actors = Actor.query.all()
+    actor_info = [actors.format() for actor in actors]
 
-    try:
-        actors = Actor.query.all()
-        actor_info = [actors.format() for actor in actors]
+    return jsonify({
+      'status_code': 200,
+      'success': True,
+      'movies': actor_info
+    })
 
-        return jsonify({
-            'status_code': 200,
-            'success': True,
-            'movies': actor_info
-        })
-
-    except:
-        abort(400)
+  except:
+    abort(400)
 
 @app.route('/actors/<int:id>', methods=['DELETE'])
 @requires_auth('delete:actors')
@@ -81,6 +79,8 @@ def add_movie(payload):
       'success': True,
       'movie': movie_formatted
     })
+  except:
+    abort(422)
 
 @app.route('/actors', methods=['POST'])
 @requires_auth('post:actors')
@@ -98,6 +98,8 @@ def add_actor(payload):
       'success': True,
       'actor': actor_formatted
       })
+  except:
+    abort(422)
 
 @app.route('/movies/<int:id>', methods=['PATCH'])
 @requires_auth('patch:movies')
@@ -157,9 +159,9 @@ def callback():
 
 @app.errorhandler(AuthError)
 def handle_auth_error(ex):
-    response = jsonify(ex.error)
-    response.status_code = ex.status_code
-    return response
+  response = jsonify(ex.error)
+  response.status_code = ex.status_code
+  return response
 
 if __name__ == '__main__':
   app.debug = True
