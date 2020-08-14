@@ -90,12 +90,9 @@ def add_actor(payload):
     name = body['name']
     age = body['age']
     gender = body['gender']
-    
     actor = Actor(name=name, age=age, gender=gender)
     actor.insert()
-    
     actor_formatted = actor.format()
-    
     return jsonify({
       'status_code': 200,
       'success': True,
