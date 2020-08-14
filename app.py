@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, abort
 from sqlalchemy import exc
 import json
 
-from models import db_drop_and_create_all, setup_db, Movie, Actor
+from models import setup_db, Movie, Actor
 from auth import AuthError, requires_auth
 
 app = Flask(__name__)
