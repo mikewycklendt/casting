@@ -80,7 +80,7 @@ def add_movie(payload):
       'status_code': 200,
       'success': True,
       'movie': movie_formatted
-      })
+    })
 
 @app.route('/actors', methods=['POST'])
 @requires_auth('post:actors')
