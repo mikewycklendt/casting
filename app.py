@@ -106,8 +106,8 @@ def add_actor(payload):
 def edit_movie(payload, id):
   try:
     body = request.get_json()
-    title = body['title']
-    release = body['release']
+    title = body['title', None]
+    release = body['release', None]
 
     movie = Movie.query.filter(Movie.id == id).one()
     movie.title = title
@@ -126,12 +126,12 @@ def edit_movie(payload, id):
 
 @app.route('/actors/<int:id>', methods=['PATCH'])
 @requires_auth('patch:actors')
-def edit_movie(payload, id):
+def edit_actor(payload, id):
   try:
     body = request.get_json()
-    name = body['name']
-    age = body['age']
-    gender = body['gender']
+    name = body['name', None]
+    age = body['age', None]
+    gender = body['gender', None]
 
     actor = Actor.query.filter(Actor.id == id).one()
     actor.name = name
