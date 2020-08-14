@@ -53,7 +53,7 @@ def delete_actor(payload, id):
 
 @app.route('/movies/<int:id>', methods=['DELETE'])
 @requires_auth('delete:movies')
-def delete_actor(payload, id):
+def delete_movie(payload, id):
   try:
     movie = Movie.query.filter(Movie.id==id).one_or_none()
     movie.delete()
