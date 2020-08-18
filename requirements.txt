@@ -23,7 +23,6 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 jsonpatch==1.10
 jsonpointer==1.9
-language-selector==0.1
 lazy-object-proxy==1.4.0
 Mako==1.1.2
 MarkupSafe==1.1.1
