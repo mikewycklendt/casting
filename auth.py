@@ -7,7 +7,7 @@ from urllib.request import urlopen
 
 AUTH0_DOMAIN = 'dcadventuresonline.us.auth0.com'
 ALGORITHMS = ['RS256']
-API_AUDIENCE = 'https://dcadventuresonline.com'
+API_AUDIENCE = 'capstone'
 
 ## AuthError Exception
 '''
