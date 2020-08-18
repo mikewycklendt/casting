@@ -41,7 +41,6 @@ pyserial==3.0.1
 python-dateutil==2.6.0
 python-editor==1.0.4
 python-jose-cryptodome==1.3.2
-python-systemd==231
 pytz==2019.1
 PyYAML==3.11
 requests==2.9.1
