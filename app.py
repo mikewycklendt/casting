@@ -9,6 +9,10 @@ from auth import AuthError, requires_auth
 app = Flask(__name__)
 setup_db(app)
 
+@app.route('/')
+def index():
+  return 'Hello World'
+
 @app.route('/movies')
 @requires_auth('get:movies')
 def movies(payload):
