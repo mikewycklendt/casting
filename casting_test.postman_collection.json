@@ -1,0 +1,707 @@
+{
+	"info": {
+		"_postman_id": "7b59fb80-0b22-4e17-879f-3277e972ffa3",
+		"name": "capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "assistant",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c8f9edbb-9f8d-44a5-a85a-d549003d351c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains drinks array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.movies).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e75a6d47-740a-4cd8-95b2-bd2719614072",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains drinks array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.actors).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "65f5dac6-c88a-4fba-80bb-9f1cbf0f4211",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "74f2e043-45b8-4ce4-98bb-b7c89a517f78",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "14978e29-b388-4da3-b1de-921e45642afc",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "94e4fb6f-98d5-4be2-a16d-8bb220d30b87",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8505da0d-8c3e-46c5-a160-1697480d2e20",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNfaGNudlJleTMyWEFhVExoekhOQiJ9.eyJpc3MiOiJodHRwczovL2RjYWR2ZW50dXJlc29ubGluZS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYwMzEyZDE2NTJlNWEwMDE5Y2UzYjU0IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE1OTc4NTUyMTEsImV4cCI6MTU5Nzg2MjQxMSwiYXpwIjoiZWZ5Y2o4Z2QzdVZoZTZVdTNlanFTbDFxNTBZdTJkUmMiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.X2SpOFDJOPHXWlVuUYGgbgVQLaH6LDF0UjA72qlF_RXPg0gIPgAzEnTRrrqsBX6xRzqKY3WCVRZK39HjH7gWwCJYrq4u8Y5tnh29Ft_4jk-vxGevot7-0UpPQT-p4odzmfXWLa4jkS_CcD68FvKEIJG1TBAs_kJ8XpaZ4jgjbES5mxFtT_HBNoi-dZKlGa1HGwNv4Oof52KzBzWcb9DalFALEiFUSbYTk06aS_3VWzGIQfpcxeilv75yKuWzlfCUGlhalYDWQNPVWddKEtIo3vQizkroi7RxW1UOpwj0GIViJU04vBBTF7YZ_ykuHVAI6U_uzggMcf0aW4BUDkeuzA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "19d19a49-ec49-4787-818a-a3aa40aab23b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a15fee1b-10c7-43cb-bfc9-83740cb67e41",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "director",
+			"item": [
+				{
+					"name": "/actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sam Worthington\",\r\n    \"age\": \"30\",\r\n    \"gender\": \"male\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3e78b053-924e-42d6-94a0-ea13c3c602be",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5e988a7c-3794-413c-b3a6-0fb33bd16557",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains actor array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.actor).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sam worthington\",\r\n    \"age\": \"35\",\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2978b035-c300-4cc4-9a70-9c72dcdb4528",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains movie array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.movie).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Avatar\",\r\n    \"release\": \"2009\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cd258de8-59a8-479b-a1e4-7ed660f9efbd",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNfaGNudlJleTMyWEFhVExoekhOQiJ9.eyJpc3MiOiJodHRwczovL2RjYWR2ZW50dXJlc29ubGluZS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYzZDU3NzhiMjMwMzAwMDY3MDRlZGZhIiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE1OTc4NTU5NzUsImV4cCI6MTU5Nzg2MzE3NSwiYXpwIjoiZWZ5Y2o4Z2QzdVZoZTZVdTNlanFTbDFxNTBZdTJkUmMiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.TpRoFxGsbfsJrg2tAWsCGkzMYEonk6JCGhrAnW7Zh7H3SGf9IUdPOMTyQBAjyap481j8xGI1SgOSdxsFxF4JS-eN3xB-7r5LQYo6KIaA0_GFzuuCSXUKauvMmc38T3Iv8NsJbosx-95h5WbXsmyUkfL5h5Ycjk6sfqcN3r8864Bhgpa8y3mqugMewm74JO9a2_6-fuRP83rkrei6nyXVoeW2RQu-DvWGm3l9_AxmTblDPrqzKL6yY-nMYVpyCZ0KLrfDt1C0kzry0U6hGVlbzrc_R1yqR7RjT-AeBNyAGvyDIbF6hdcydCG08O_HhRV4bepD6NAjoB17cZ5VOwP5kw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f243f36f-5af9-497a-9068-1c1486c8d516",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9212275-77d2-4544-afaa-608584b8fc3f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "producer",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "84dc1087-a176-4a78-8285-70c55b1e65fc",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"avatar\",\r\n    \"release\": \"2008\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3e147e6-8886-4a80-bb1f-78beb0f3c4d7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mikewycklendtfcapstone.herokuapp.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"mikewycklendtfcapstone",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNfaGNudlJleTMyWEFhVExoekhOQiJ9.eyJpc3MiOiJodHRwczovL2RjYWR2ZW50dXJlc29ubGluZS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYwZDllYmY2NTJlNWEwMDE5Y2U3ZGVhIiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE1OTc4NTQwNjcsImV4cCI6MTU5Nzg2MTI2NywiYXpwIjoiZWZ5Y2o4Z2QzdVZoZTZVdTNlanFTbDFxNTBZdTJkUmMiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.bd9W7smu9zYRkjXDqLx1t_XiMMQSA-pundArl14GKUbLc8Z-wlxbTtvF_KVa5OlwGj0jEjX9h49D5ku0Rsc1kYj28SmDaV_gFb6BvydHL3PUB-Ok6ebrO-1zRj-GvSf9xQYYFJCw541LoM_4UuwnQRrYcVs8VMJvCw_H7vNrVNy04MvKle12oREWhWqjVyCiwtSdfgTp3eHcVbTNA4UDG8ZhRhUKEs2SlucE92Hcerw3BhgnjLit_IAINvIDUIXmEAK0nxLSOSpaOvsmuAjzviq853rANiy3JjsAEfnnKWSIYg-nO4Dk7Tb2Uikep_l32zJHV0A1cqaqoxgcuoANAQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "652353c3-28c2-4c9f-9e79-d4f49d29d4ba",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "21b82624-b322-43e9-8692-56e542f7bc7d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "/movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5ff65808-4b2d-4ef7-b573-042820ce3714",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "49c07c70-208b-47ef-8f24-2939edfbce42",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8e08c67e-39b6-41c9-8b4c-c8c7f996d2c3",
+			"key": "host",
+			"value": "https://mikewycklendtfcapstone.herokuapp.com/"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
