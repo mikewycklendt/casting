@@ -6,6 +6,8 @@ import json
 from models import setup_db, Movie, Actor
 from auth import AuthError, requires_auth
 
+#https://dcadventuresonline.us.auth0.com/authorize?audience=capstone&response_type=token&client_id=efycj8gd3uVhe6Uu3ejqSl1q50Yu2dRc&redirect_uri=https://mikewycklendtfcapstone.herokuapp.com/calback
+
 app = Flask(__name__)
 setup_db(app)
 
@@ -39,7 +41,7 @@ def actors(payload):
     return jsonify({
       'status_code': 200,
       'success': True,
-      'movies': actor_info
+      'actors': actor_info
     })
 
   except:
